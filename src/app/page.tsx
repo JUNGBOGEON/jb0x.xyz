@@ -26,7 +26,7 @@ export default function Home() {
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="flex items-center gap-1">
                       <Sparkles className="w-3 h-3" />
-                      새로운 기회를 찾고 있습니다
+                      JUNGBOGEON
                     </Badge>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Java를 배워 마인크래프트 플러그인 개발
+                    Java 언어로 마인크래프트 플러그인 개발
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="text-xs bg-red-500/10 border-red-500/30">Java</Badge>
