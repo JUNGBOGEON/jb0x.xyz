@@ -3,7 +3,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Github, Instagram, Sparkles, Calendar, Code, Server, Gamepad2, Database, Globe, Cpu, FileCode, Terminal, Layers } from "lucide-react";
+import { Sparkles, Calendar, Code, Server, Gamepad2, Globe, FileCode, Instagram } from "lucide-react";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -47,72 +48,72 @@ export default function Home() {
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-blue-500/10 to-yellow-500/10 border border-blue-500/20 hover:border-blue-500/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-yellow-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <FileCode className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/Python.svg" alt="Python" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">Python</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2019~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-yellow-400/10 to-yellow-600/10 border border-yellow-500/20 hover:border-yellow-500/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Terminal className="w-6 h-6 text-black" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/JavaScript.svg" alt="JavaScript" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">JavaScript</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2020~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-green-500/10 to-green-700/10 border border-green-500/20 hover:border-green-500/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Server className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/Nodejs.svg" alt="Node.js" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">Node.js</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2020~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/20 hover:border-red-500/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Cpu className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/Java.svg" alt="Java" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">Java</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2022~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/20 hover:border-purple-500/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Database className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/Kotlin.svg" alt="Kotlin" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">Kotlin</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2024~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-cyan-400/10 to-blue-500/10 border border-cyan-400/20 hover:border-cyan-400/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Layers className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/React.svg" alt="React" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">React</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2024~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-gray-800/10 to-black/10 border border-gray-600/20 hover:border-gray-600/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Globe className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/Nextjs.svg" alt="Next.js" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">Next.js</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2024~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-blue-600/10 to-blue-800/10 border border-blue-600/20 hover:border-blue-600/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Code className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/TypeScript.svg" alt="TypeScript" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">TypeScript</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2024~</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-4 rounded-lg bg-gradient-to-br from-red-600/10 to-pink-600/10 border border-red-600/20 hover:border-red-600/40 hover:scale-105 transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-pink-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <Server className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <Image src="/icon/Nestjs.svg" alt="Nest.js" width={32} height={32} />
                     </div>
                     <span className="text-sm font-medium text-center">Nest.js</span>
                     <span className="text-xs text-muted-foreground text-center mt-1">2025~</span>
@@ -307,7 +308,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm p-3 rounded-lg bg-muted/30 hover:bg-primary/20 hover:text-primary transition-all duration-300 hover:scale-105"
                 >
-                  <Github className="w-4 h-4" />
+                  <Image src="/icon/GitHub.svg" alt="GitHub" width={16} height={16} />
                   GitHub
                 </a>
                 <a 
