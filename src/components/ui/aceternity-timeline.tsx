@@ -207,35 +207,56 @@ export const AceternityTimeline = ({
                   <div className="w-1/2" />
                 </div>
                 
-                {/* Center node */}
+                {/* Center timeline icon marker */}
                 <motion.div
                   className="absolute left-1/2 transform -translate-x-1/2 z-10"
-                  initial={{ scale: 0 }}
-                  animate={itemVisible ? { scale: 1 } : { scale: 0 }}
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={itemVisible ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                   transition={{ 
                     delay: itemVisible ? 0.4 : 0, 
-                    duration: 0.4, 
+                    duration: 0.6, 
                     type: "spring",
-                    stiffness: 200,
-                    damping: 15
+                    stiffness: 140,
+                    damping: 10
                   }}
                 >
+                  {/* Background glow for current item */}
+                  {item.current && (
+                    <motion.div
+                      className="absolute inset-0 w-12 h-12 -translate-x-2 -translate-y-2 rounded-2xl bg-blue-400/20 dark:bg-blue-400/30 blur-md"
+                      animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.4, 0.9, 0.4]
+                      }}
+                      transition={{ repeat: Infinity, duration: 3.5 }}
+                    />
+                  )}
+                  
+                  {/* Icon container */}
                   <motion.div
                     className={cn(
-                      "w-6 h-6 rounded-full border-4 border-white dark:border-neutral-900",
+                      "relative p-3 rounded-2xl border-2 shadow-xl backdrop-blur-sm",
                       item.current 
-                        ? "bg-gradient-to-br from-blue-400 to-purple-500 shadow-lg shadow-blue-200 dark:shadow-blue-900/50" 
-                        : "bg-neutral-300 dark:bg-neutral-600"
+                        ? "bg-gradient-to-br from-blue-400 to-purple-500 border-blue-300 dark:border-blue-600 text-white shadow-blue-200 dark:shadow-blue-900/50" 
+                        : "bg-white/95 dark:bg-neutral-800/95 border-neutral-200 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300 shadow-neutral-300 dark:shadow-neutral-700"
                     )}
-                    animate={item.current ? { 
-                      boxShadow: [
-                        "0 0 0 0 rgba(59, 130, 246, 0.4)",
-                        "0 0 0 10px rgba(59, 130, 246, 0)",
-                        "0 0 0 0 rgba(59, 130, 246, 0)"
-                      ]
-                    } : {}}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                  />
+                    whileHover={{ scale: 1.15, rotate: 10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <IconComponent className="w-6 h-6" />
+                    
+                    {/* Current item pulse effect */}
+                    {item.current && (
+                      <motion.div
+                        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400/30 to-purple-500/30"
+                        animate={{ 
+                          scale: [1, 1.05, 1],
+                          opacity: [0.3, 0.7, 0.3]
+                        }}
+                        transition={{ repeat: Infinity, duration: 3 }}
+                      />
+                    )}
+                  </motion.div>
                 </motion.div>
               </motion.div>
             );
@@ -316,29 +337,56 @@ export const AceternityTimelineMobile = ({
                   ease: "easeOut",
                 }}
               >
-                {/* Mobile center node */}
+                {/* Mobile timeline icon marker */}
                 <motion.div
-                  className="absolute -left-8 top-4 z-10"
-                  initial={{ scale: 0 }}
-                  animate={mobileItemVisible ? { scale: 1 } : { scale: 0 }}
+                  className="absolute -left-10 top-2 z-10"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={mobileItemVisible ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                   transition={{ 
                     delay: mobileItemVisible ? 0.3 : 0, 
-                    duration: 0.3, 
+                    duration: 0.5, 
                     type: "spring",
-                    stiffness: 200,
-                    damping: 15
+                    stiffness: 150,
+                    damping: 12
                   }}
                 >
+                  {/* Background glow for current item */}
+                  {item.current && (
+                    <motion.div
+                      className="absolute inset-0 w-8 h-8 -translate-x-1 -translate-y-1 rounded-xl bg-blue-400/20 dark:bg-blue-400/30 blur-sm"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.4, 0.8, 0.4]
+                      }}
+                      transition={{ repeat: Infinity, duration: 3 }}
+                    />
+                  )}
+                  
+                  {/* Icon container */}
                   <motion.div
                     className={cn(
-                      "w-4 h-4 rounded-full border-2 border-white dark:border-neutral-900",
+                      "relative p-2 rounded-xl border-2 shadow-lg backdrop-blur-sm",
                       item.current 
-                        ? "bg-gradient-to-br from-blue-400 to-purple-500" 
-                        : "bg-neutral-300 dark:bg-neutral-600"
+                        ? "bg-gradient-to-br from-blue-400 to-purple-500 border-blue-300 dark:border-blue-600 text-white shadow-blue-200 dark:shadow-blue-900" 
+                        : "bg-white/90 dark:bg-neutral-800/90 border-neutral-200 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300 shadow-neutral-200 dark:shadow-neutral-800"
                     )}
-                    animate={item.current ? { scale: [1, 1.2, 1] } : {}}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                  />
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <IconComponent className="w-4 h-4" />
+                    
+                    {/* Current item pulse effect */}
+                    {item.current && (
+                      <motion.div
+                        className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400/30 to-purple-500/30"
+                        animate={{ 
+                          scale: [1, 1.05, 1],
+                          opacity: [0.5, 0.8, 0.5]
+                        }}
+                        transition={{ repeat: Infinity, duration: 2.5 }}
+                      />
+                    )}
+                  </motion.div>
                 </motion.div>
                 
                 {/* Mobile card */}
@@ -352,30 +400,16 @@ export const AceternityTimelineMobile = ({
                   whileHover={{ scale: 1.01, y: -1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <motion.div
-                      className={cn(
-                        "p-2 rounded-lg",
-                        item.current 
-                          ? "bg-gradient-to-br from-blue-400 to-purple-500 text-white" 
-                          : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300"
-                      )}
-                      whileHover={{ rotate: 5 }}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </motion.div>
-                    
-                    <div>
-                      <h3 className={cn(
-                        "font-bold",
-                        item.current ? "text-blue-600 dark:text-blue-400" : "text-neutral-800 dark:text-neutral-200"
-                      )}>
-                        {item.year}
-                      </h3>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                        {item.title}
-                      </p>
-                    </div>
+                  <div className="mb-3">
+                    <h3 className={cn(
+                      "font-bold text-lg",
+                      item.current ? "text-blue-600 dark:text-blue-400" : "text-neutral-800 dark:text-neutral-200"
+                    )}>
+                      {item.year}
+                    </h3>
+                    <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                      {item.title}
+                    </p>
                   </div>
                   
                   <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-3 leading-relaxed">
